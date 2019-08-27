@@ -1,0 +1,18 @@
+.data-import-title{
+    color: rgb(81, 90, 110);
+    font-size: 16px;
+}
+.data-import-title p{
+    font-weight: bold;
+    margin: 0 0 16px 0;
+}
+.data-import-title p span{
+    font-size: 14px;
+}
+.v-form{
+    background-color: #FAFAFA;
+    padding-top: 16px;
+}
+.v-form .ivu-form-item{
+    width: 300px;
+}

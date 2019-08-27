@@ -45,11 +45,6 @@ export default {
 }
 </script>
 <style scoped>
-.v-header{
-  padding: 0 16px;
-  background-color: #0084F9;
-  clear: both;
-}
 .v-header-title{
   color:#fff;
   font-size: 14px;

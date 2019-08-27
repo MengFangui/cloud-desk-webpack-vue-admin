@@ -6,7 +6,7 @@
                     <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
                         <Submenu name="1">
                             <template slot="title">
-                                <Icon type="ios-navigate"></Icon>
+                                <Icon type="md-cloud-upload" />
                                 数据导入
                             </template>
                             <MenuItem name="1-1">
@@ -28,7 +28,8 @@
                     <Header class="v-header">
                         <vheader></vheader>
                     </Header>
-                    <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+                    <v-return></v-return>
+                    <Content :style="{padding: '16px', background: '#fff'}">
                         <router-view></router-view>
                     </Content>
                 </Layout>
@@ -38,8 +39,9 @@
 </template>
 <script>
 import vheader from '@/components/vheader'
+import vReturn from './data-import/return'
 export default {
-  components: { vheader },
+  components: { vheader, vReturn },
   data () {
     return {}
   },
@@ -99,8 +101,11 @@ export default {
 }
 .v-header{
     background: #0084F9;
-    padding: 0;
+    padding: 0 10px;
     text-align: left;
-    border: 1px solid red
+    clear: both;
+}
+.v-layout .ivu-layout-sider{
+    border-right:1px solid rgb(220, 222, 226);
 }
 </style>

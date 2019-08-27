@@ -1,6 +1,6 @@
 <template>
   <div class="user-avator-dropdown">
-    <Dropdown @on-click="handleClick">
+    <Dropdown @on-click="handleClick" placement="bottom">
       {{ userName }}
       <Icon :size="18" type="md-arrow-dropdown"></Icon>
       <DropdownMenu slot="list">
@@ -60,7 +60,7 @@ export default {
   color: #fff;
 }
 .user-avator-dropdown .ivu-badge-dot {
-  top: 16px;
+  /* top: 16px; */
 }
 
 </style>

@@ -13,8 +13,7 @@ export default {
   }
 }
 </script>
-<style>
-@import './assets/normalize.css'
+<style src='./assets/normalize.css'>
 </style>
 
 <style>
@@ -30,6 +29,5 @@ html,body {
   color: #2c3e50;
   min-height: 100%;
   height: 100%;
-  border:1px solid red;
 }
 </style>
