@@ -7,27 +7,20 @@
                         <Submenu name="1">
                             <template slot="title">
                                 <Icon type="ios-navigate"></Icon>
-                                Item 1
+                                数据导入
                             </template>
-                            <MenuItem name="1-1">Option 1</MenuItem>
-                            <MenuItem name="1-2">Option 2</MenuItem>
-                            <MenuItem name="1-3">Option 3</MenuItem>
-                        </Submenu>
-                        <Submenu name="2">
-                            <template slot="title">
-                                <Icon type="ios-keypad"></Icon>
-                                Item 2
-                            </template>
-                            <MenuItem name="2-1">Option 1</MenuItem>
-                            <MenuItem name="2-2">Option 2</MenuItem>
-                        </Submenu>
-                        <Submenu name="3">
-                            <template slot="title">
-                                <Icon type="ios-analytics"></Icon>
-                                Item 3
-                            </template>
-                            <MenuItem name="3-1">Option 1</MenuItem>
-                            <MenuItem name="3-2">Option 2</MenuItem>
+                            <MenuItem name="1-1">
+                                <router-link to="normalization">专项阶段</router-link>
+                            </MenuItem>
+                            <MenuItem name="1-2">
+                                <router-link to="special">常态化阶段</router-link>
+                            </MenuItem>
+                            <MenuItem name="1-3">
+                                <router-link to="tradingpath">交易路径模板</router-link>
+                            </MenuItem>
+                            <MenuItem name="1-4">
+                                <router-link to="templateaudit">模板审核</router-link>
+                            </MenuItem>
                         </Submenu>
                     </Menu>
                 </Sider>
@@ -70,5 +63,8 @@ export default {
 }
 .v-layout .ivu-menu{
     text-align: left
+}
+.v-layout a{
+    color: rgb(81, 90, 110);
 }
 </style>
