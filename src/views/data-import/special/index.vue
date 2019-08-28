@@ -6,7 +6,7 @@
         模板下载 <span>（请先选择文件类型、业务领域）</span>
       </p>
     </div>
-      <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80" inline class="v-form">
+      <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="100" inline class="v-form">
         <FormItem label="文件类型" prop="fileType">
             <Select v-model="formValidate.fileType" placeholder="请选择文件类型">
                 <Option value="1">业务场景</Option>
@@ -33,7 +33,7 @@
         导入数据
       </p>
     </div>
-     <Form :rules="ruleValidate" :label-width="80" inline class="v-form">
+     <Form :rules="ruleValidate" :label-width="100" inline class="v-form">
         <FormItem label="导入文件">
             <Upload
                 multiple

@@ -6,12 +6,11 @@
         模板下载 <span>（请先选择文件类型、业务领域）</span>
       </p>
     </div>
-      <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80" inline class="v-form">
+      <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="100" inline class="v-form">
         <FormItem label="文件类型" prop="fileType">
             <Select v-model="formValidate.fileType" placeholder="请选择文件类型">
-                <Option value="1">业务场景</Option>
-                <Option value="2">业务功能</Option>
-                <Option value="3">发起端信息</Option>
+                <Option value="1">业务场景&业务功能</Option>
+                <Option value="2">发起端信息</Option>
             </Select>
         </FormItem>
         <FormItem label="业务领域" prop="businessArea">
@@ -33,10 +32,17 @@
         导入数据
       </p>
     </div>
-     <Form :rules="ruleValidate" :label-width="80" inline class="v-form">
+     <Form :model="formValidate1" :rules="ruleValidate1" :label-width="100" inline class="v-form">
+        <FormItem label="文件类型" prop="fileTypeUpLoad">
+            <Select v-model="formValidate1.fileTypeUpLoad" placeholder="请选择文件类型">
+                <Option value="1">业务场景&业务功能</Option>
+                <Option value="2">发起端信息</Option>
+            </Select>
+        </FormItem>
         <FormItem label="导入文件">
             <Upload
                 multiple
+                :disabled='disabledUpload'
                 action="//jsonplaceholder.typicode.com/posts/">
                 <Button icon="ios-cloud-upload-outline">导入数据</Button>
             </Upload>
@@ -52,7 +58,11 @@ export default {
     return {
       formValidate: {
         fileType: '',
-        businessArea: ''
+        businessArea: '',
+        fileTypeUpLoad: ''
+      },
+      formValidate1: {
+        fileTypeUpLoad: ''
       },
       ruleValidate: {
         fileType: [
@@ -60,6 +70,14 @@ export default {
         ],
         businessArea: [
           { required: true, message: '请选择业务领域', trigger: 'change' }
+        ],
+        fileType1: [
+          { required: true, message: '请选择文件类型', trigger: 'change' }
+        ]
+      },
+      ruleValidate1: {
+        fileTypeUpLoad: [
+          { required: true, message: '请选择文件类型', trigger: 'change' }
         ]
       }
 
@@ -68,6 +86,9 @@ export default {
   computed: {
     btnDisabled () {
       return this.formValidate.fileType == '' || this.formValidate.businessArea == ''
+    },
+    disabledUpload () {
+      return this.formValidate1.fileTypeUpLoad == ''
     }
   },
   watch: {

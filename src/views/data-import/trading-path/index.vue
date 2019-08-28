@@ -22,6 +22,11 @@
             </Select>
         </FormItem>
         <br/>
+        <FormItem label="业务场景" prop="businessScenarios">
+            <Select v-model="formValidate.businessScenarios" placeholder="请选择业务场景" filterable>
+                <Option v-for="item in businessScenariosList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+        </FormItem>
         <FormItem label="业务功能" prop="businessFunctions">
             <Select v-model="formValidate.businessFunctions" placeholder="请选择业务功能" multiple filterable>
                 <Option v-for="item in businessFunctionsList" :value="item.value" :key="item.value">{{ item.label }}</Option>
@@ -42,7 +47,7 @@
         导入数据
       </p>
     </div>
-     <Form :rules="ruleValidate" :label-width="80" inline class="v-form">
+     <Form :rules="ruleValidate" :label-width="100" inline class="v-form">
         <FormItem label="导入文件">
             <Upload
                 multiple
@@ -64,7 +69,8 @@ export default {
         fileType: '1',
         businessArea: '',
         businessFunctions: [],
-        physicalSubsystem: ''
+        physicalSubsystem: '',
+        businessScenarios: ''
       },
       businessFunctionsList: [
         {
@@ -118,6 +124,32 @@ export default {
           label: 'Canberra'
         }
       ],
+      businessScenariosList: [
+        {
+          value: 'New York',
+          label: 'New York'
+        },
+        {
+          value: 'London',
+          label: 'London'
+        },
+        {
+          value: 'Sydney',
+          label: 'Sydney'
+        },
+        {
+          value: 'Ottawa',
+          label: 'Ottawa'
+        },
+        {
+          value: 'Paris',
+          label: 'Paris'
+        },
+        {
+          value: 'Canberra',
+          label: 'Canberra'
+        }
+      ],
       ruleValidate: {
         fileType: [
           { required: true, message: '请选择文件类型', trigger: 'change' }
@@ -126,9 +158,12 @@ export default {
           { required: true, message: '请选择业务领域', trigger: 'change' }
         ],
         businessFunctions: [
-          { required: true, message: '请选择业务功能', trigger: 'change', type: 'array' }
+          { required: false, message: '请选择业务功能', trigger: 'change', type: 'array' }
         ],
         physicalSubsystem: [
+          { required: true, message: '请选择物理子系统', trigger: 'change' }
+        ],
+        businessScenarios: [
           { required: true, message: '请选择物理子系统', trigger: 'change' }
         ]
       }
