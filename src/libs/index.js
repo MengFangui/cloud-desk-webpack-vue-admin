@@ -1,7 +1,7 @@
 import { subscribe, publish, cancel } from './event'
 import { format2Date, format2Time } from './date'
 import lodash from 'lodash'
-import axios from 'axios'
+import axios from './ajax'
 
 let plugin = {
   install: (Vue, option) => {
